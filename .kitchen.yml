@@ -1,0 +1,26 @@
+---
+driver:
+  name: vagrant
+  network:
+    - ["private_network", { ip: "192.168.33.33" }]
+
+provisioner:
+  name: salt_solo
+  formula: iojs
+  pillars-from-files:
+    iojs.sls: pillar.example
+  pillars:
+    top.sls:
+      base:
+        "*":
+          - iojs
+  state_top:
+    base:
+      "*":
+        - iojs
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
