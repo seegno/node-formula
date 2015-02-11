@@ -14,7 +14,7 @@ Right now only Ubuntu 64 bits is supported.
 
 ## Usage
 
- * Bootstrap your machine with [salt-bootstrap](https://github.com/seegno/iojs-formula).
+ * Bootstrap your machine with [salt-bootstrap](https://github.com/saltstack/salt-bootstrap).
  * Set your pillar data with the version and the md5sum of the file:
 ```yaml
 iojs:
