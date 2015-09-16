@@ -18,12 +18,12 @@ iojs-extract-tarball:
 
 iojs-move-files:
   cmd.run:
-    - name: /usr/bin/rsync -ap ./ /usr/local/iojs
-    - cwd: /tmp/iojs-v{{ iojs["version"] }}-linux-x64
+    - name: /usr/bin/rsync -ap ./ /usr/local/node
+    - cwd: /tmp/node-v{{ iojs["version"] }}-linux-x64
 
 iojs-doc-directory:
   file.directory:
-    - name: /usr/local/iojs/share/docs
+    - name: /usr/local/node/share/docs
     - group: root
     - makedirs: True
     - mode: 755
@@ -31,25 +31,20 @@ iojs-doc-directory:
 
 iojs-make-bom:
   cmd.run:
-    - name: tar tf /tmp/{{ filename }} > /usr/local/iojs/share/docs/files
+    - name: tar tf /tmp/{{ filename }} > /usr/local/node/share/docs/files
     - cwd: /tmp
     - require:
       - file: iojs-get-tarball
     - watch:
       - file: iojs-get-tarball
 
-iojs-link-iojs:
-  file.symlink:
-    - name: /usr/local/bin/iojs
-    - target: /usr/local/iojs/bin/iojs
-
 iojs-link-node:
   file.symlink:
     - name: /usr/local/bin/node
-    - target: /usr/local/iojs/bin/node
+    - target: /usr/local/node/bin/node
 
 iojs-link-npm:
   file.symlink:
     - name: /usr/local/bin/npm
-    - target: /usr/local/iojs/bin/npm
+    - target: /usr/local/node/bin/npm
 
