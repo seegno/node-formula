@@ -1,10 +1,10 @@
 {% from "iojs/map.jinja" import iojs with context %}
-{% set filename = "iojs-v" + iojs["version"] + "-linux-x64.tar.gz" %}
+{% set filename = "node-v" + iojs["version"] + "-linux-x64.tar.gz" %}
 
 iojs-get-tarball:
   file.managed:
     - name: /tmp/{{ filename }}
-    - source: https://iojs.org/dist/v{{ iojs["version"]}}/{{ filename }}
+    - source: https://nodejs.org/dist/v{{ iojs["version"]}}/{{ filename }}
     - source_hash: md5={{ iojs["tar-md5"] }}
 
 iojs-extract-tarball:
