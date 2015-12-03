@@ -1,4 +1,6 @@
 node:
   version: 4.2.2
   tar-md5: d15578f9497cfc470876035be6817b44
+  pm2:
+    version: 0.15.10
 

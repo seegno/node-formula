@@ -18,6 +18,7 @@ provisioner:
     base:
       "*":
         - node
+        - node.pm2
 
 platforms:
   - name: ubuntu-14.04
