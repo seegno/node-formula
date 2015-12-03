@@ -6,18 +6,18 @@ driver:
 
 provisioner:
   name: salt_solo
-  formula: iojs
+  formula: node
   pillars-from-files:
-    iojs.sls: pillar.example
+    node.sls: pillar.example
   pillars:
     top.sls:
       base:
         "*":
-          - iojs
+          - node
   state_top:
     base:
       "*":
-        - iojs
+        - node
 
 platforms:
   - name: ubuntu-14.04

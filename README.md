@@ -1,12 +1,12 @@
-# io.js
+# node
 
-Installs [io.js](https://iojs.org/).
+Installs [node](https://nodejs.org/).
 
 ## Available States
 
-#### ``iojs``
+#### ``node``
 
-Installs iojs from the provided [tarball files](https://iojs.org/dist/).
+Installs node from the provided [tarball files](https://nodejs.org/dist/).
 
 ## Platforms
 
@@ -17,15 +17,15 @@ Right now only Ubuntu 64 bits is supported.
  * Bootstrap your machine with [salt-bootstrap](https://github.com/saltstack/salt-bootstrap).
  * Set your pillar data with the version and the md5sum of the file:
 ```yaml
-iojs:
-  version: 1.1.0
-  tar-md5: b80c3d95a44bbd31e0b39503470832d0
+node:
+  version: 4.2.2
+  tar-md5: d15578f9497cfc470876035be6817b44
 ```
- * Add the state to your machine highstate or call it directly ``salt "my-machine-name" state.sls iojs``
+ * Add the state to your machine highstate or call it directly ``salt "my-machine-name" state.sls node``
 
 ```bash
 $ salt "my-machine-name" cmd.run "node --version"
-v1.1.0
+v4.2.2
 ```
 
 ## Testing
