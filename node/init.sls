@@ -1,27 +1,27 @@
-{% from "iojs/map.jinja" import iojs with context %}
-{% set filename = "node-v" + iojs["version"] + "-linux-x64.tar.gz" %}
+{% from "node/map.jinja" import node with context %}
+{% set filename = "node-v" + node["version"] + "-linux-x64.tar.gz" %}
 
-iojs-get-tarball:
+node-get-tarball:
   file.managed:
     - name: /tmp/{{ filename }}
-    - source: https://nodejs.org/dist/v{{ iojs["version"]}}/{{ filename }}
-    - source_hash: md5={{ iojs["tar-md5"] }}
+    - source: https://nodejs.org/dist/v{{ node["version"]}}/{{ filename }}
+    - source_hash: md5={{ node["tar-md5"] }}
 
-iojs-extract-tarball:
+node-extract-tarball:
   cmd.run:
     - name: tar xf /tmp/{{ filename }}
     - cwd: /tmp
     - require:
-      - file: iojs-get-tarball
+      - file: node-get-tarball
     - watch:
-      - file: iojs-get-tarball
+      - file: node-get-tarball
 
-iojs-move-files:
+node-move-files:
   cmd.run:
     - name: /usr/bin/rsync -ap ./ /usr/local/node
-    - cwd: /tmp/node-v{{ iojs["version"] }}-linux-x64
+    - cwd: /tmp/node-v{{ node["version"] }}-linux-x64
 
-iojs-doc-directory:
+node-doc-directory:
   file.directory:
     - name: /usr/local/node/share/docs
     - group: root
@@ -29,21 +29,21 @@ iojs-doc-directory:
     - mode: 755
     - user: root
 
-iojs-make-bom:
+node-make-bom:
   cmd.run:
     - name: tar tf /tmp/{{ filename }} > /usr/local/node/share/docs/files
     - cwd: /tmp
     - require:
-      - file: iojs-get-tarball
+      - file: node-get-tarball
     - watch:
-      - file: iojs-get-tarball
+      - file: node-get-tarball
 
-iojs-link-node:
+node-link-node:
   file.symlink:
     - name: /usr/local/bin/node
     - target: /usr/local/node/bin/node
 
-iojs-link-npm:
+node-link-npm:
   file.symlink:
     - name: /usr/local/bin/npm
     - target: /usr/local/node/bin/npm
