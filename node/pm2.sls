@@ -10,5 +10,5 @@ node-symlink-pm2:
     - name: /usr/local/bin/pm2
     - target: /usr/local/node/bin/pm2
     - require:
-      - file: node-install-pm2
+      - cmd: node-install-pm2
 
