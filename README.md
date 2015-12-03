@@ -8,6 +8,10 @@ Installs [node](https://nodejs.org/).
 
 Installs node from the provided [tarball files](https://nodejs.org/dist/).
 
+###  ``node.pm2``
+
+Install pm2 globally with npm
+
 ## Platforms
 
 Right now only Ubuntu 64 bits is supported.
@@ -20,6 +24,8 @@ Right now only Ubuntu 64 bits is supported.
 node:
   version: 4.2.2
   tar-md5: d15578f9497cfc470876035be6817b44
+  pm2:
+    version: 0.15.10
 ```
  * Add the state to your machine highstate or call it directly ``salt "my-machine-name" state.sls node``
 
