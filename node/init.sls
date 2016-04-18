@@ -1,5 +1,5 @@
 {% from "node/map.jinja" import node with context %}
-{% set filename = "node-v" + node["version"] + "-linux-x64.tar.gz" %}
+{% set filename = "node-v" + node["version"] + "-linux-x64.tar.xz" %}
 
 node-get-tarball:
   file.managed:
