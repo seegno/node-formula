@@ -2,7 +2,7 @@
 
 **To get this package running, simply:**
 
-- +install **[node](https://nodejs.org/).***
+- *install **[node](https://nodejs.org/).***
 - *type node **``node`` under gnu bash to install node from the provided [tarball files](https://nodejs.org/dist/).***
 - *then type  **``node.pm2`` to Install pm2 globally with npm***
 
