@@ -1,20 +1,14 @@
-# node
+### Pre-requisites
 
-Installs [node](https://nodejs.org/).
+**To get this package running, simply:**
 
-## Available States
+- *install **[node](https://nodejs.org/).***
+- *type node **``node`` under gnu bash to install node from the provided [tarball files](https://nodejs.org/dist/).***
+- *then type  **``node.pm2`` to Install pm2 globally with npm***
 
-#### ``node``
+The only current supported os is **Ubuntu 64 bits**.
 
-Installs node from the provided [tarball files](https://nodejs.org/dist/).
-
-###  ``node.pm2``
-
-Install pm2 globally with npm
-
-## Platforms
-
-Right now only Ubuntu 64 bits is supported.
+<hr/>
 
 ## Usage
 
@@ -34,22 +28,22 @@ $ salt "my-machine-name" cmd.run "node --version"
 v4.2.2
 ```
 
+<hr/>
+
 ## Testing
 
-Testing is done with [kitchen-salt](https://github.com/simonmcc/kitchen-salt).
+Testing is done with *[kitchen-salt](https://github.com/simonmcc/kitchen-salt).*
 
-Install it via bundler:
+*To do so:*
 
-```
-bundle
-```
+- *Install it via bundler: **```bundle```***
+- *then run test-kitchen with: **```kitchen converge```***
 
-Then run test-kitchen with:
-
-```
-kitchen converge
-```
+<hr/>
 
 ## Author
 
 [Alfredo Palhares](https://github.com/masterkorp)
+
+<img src="https://avatars2.githubusercontent.com/u/1326469?v=4&s=200" width="150"></img>
+<img src="https://orig15.deviantart.net/5b95/f/2016/070/3/b/mit_license_logo_by_excaliburzero-d9ur2lg.png" width="150"></img>
