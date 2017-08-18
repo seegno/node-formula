@@ -46,3 +46,4 @@ Testing is done with *[kitchen-salt](https://github.com/simonmcc/kitchen-salt).*
 [Alfredo Palhares](https://github.com/masterkorp)
 
 <img src="https://avatars2.githubusercontent.com/u/1326469?v=4&s=200" width="150"></img>
+<img src="https://orig15.deviantart.net/5b95/f/2016/070/3/b/mit_license_logo_by_excaliburzero-d9ur2lg.png" width="150"></img>
